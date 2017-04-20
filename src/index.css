@@ -7,7 +7,6 @@
 .cookie-message {
   overflow: hidden;
   box-sizing: border-box;
-  min-height: var(--cookiemessage-min-height, 64px);
   padding:
     var(--cookiemessage-vertical-padding, var(--grid-spacing-sheep))
     var(--cookiemessage-horizontal-padding, var(--grid-gutter-s));
@@ -21,8 +20,8 @@
   /* Not magic numbers.
    * The icon is supposed to have 1em of height, but it currently has
    * 1em of useless space surrounding it. */
-  width: 2em;
-  height: 2em;
+  width: 2.5em;
+  height: 2.5em;
   fill: var(--cookiemessage--icon-fill, var(--color-beijing));
 }
 
@@ -43,16 +42,16 @@
   padding-right: var(--cookiemessage--container-padding, var(--grid-spacing-donkey));
 }
 
+
 @media screen and (min-width: 1024px) {
   .cookie-message--message-container {
-    /* Vertically align the cookie message. */
-    top:
-      calc(
-          var(--cookiemessage-min-height, 64px) / 2 -
-          var(--cookiemessage-vertical-padding, var(--grid-spacing-sheep)) -
-          0.5em *
-          var(--cookiemessage-line-height, var(--text-line-height-sans-on-step--2))
-        );
+    top: 0;
+  }
+}
+
+@media screen and (min-width: 1047px) {
+  .cookie-message {
+    max-height: 40px;
   }
 }
 
