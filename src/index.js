@@ -1,5 +1,6 @@
- /* global window document */
+/* global window document */
 import React from 'react';
+import PropTypes from 'prop-types';
 import reactCookie from 'react-cookie';
 import Icon from '@economist/component-icon';
 
@@ -90,7 +91,8 @@ export default class CookieMessage extends React.Component {
       <div className="cookie-message">
         <div className="cookie-message--message-container">
           {closeButton}
-          By continuing to browse this site you are agreeing to our use of cookies.
+          By continuing to browse this site you permit us and our partners to place identification
+          cookies on your browser and agree to our use of cookies.
           Review our {policyLink} for details or change your {preferencesLink}.
         </div>
       </div>
@@ -100,13 +102,13 @@ export default class CookieMessage extends React.Component {
 
 if (process.env.NODE_ENV !== 'production') {
   CookieMessage.propTypes = {
-    cookieName: React.PropTypes.string,
-    reactCookieInstance: React.PropTypes.shape({
-      load: React.PropTypes.func.isRequired,
-      save: React.PropTypes.func.isRequired,
+    cookieName: PropTypes.string,
+    reactCookieInstance: PropTypes.shape({
+      load: PropTypes.func.isRequired,
+      save: PropTypes.func.isRequired,
     }),
-    renderCloseButton: React.PropTypes.func,
-    renderPolicyLink: React.PropTypes.func,
-    renderPreferencesLink: React.PropTypes.func,
+    renderCloseButton: PropTypes.func,
+    renderPolicyLink: PropTypes.func,
+    renderPreferencesLink: PropTypes.func,
   };
 }
